@@ -1,0 +1,70 @@
+//doctype html
+
+extends newstudent-course-modal
+
+block newstudent-career
+    section#career
+      .row
+        .section-title.text-center.wow.fadeInDown
+          h2 未來發展
+          p
+            | 是否在意畢業後的出路有那些選擇呢？
+            br
+            | 多元的未來就從加入輔大資管開始！
+
+      #career-carousel.carousel.slide(data-interval='false')
+        .carousel-inner
+          // slider 1
+          .item.active
+            .projects.clearfix
+              -each career in items1
+                -if (career.CAREER_TYPE == "iframe")
+                  figure.mix.portfolio-item
+                    img.img-responsive(src=career.CAREER_IMG, alt='Portfolio Item')
+                    a.fancybox(data-fancybox-type=career.CAREER_TYPE,href=career.CAREER_CONTENT, title=career.CAREER_CONTENT_TEXT, rel='')
+                      span.plus
+                    figcaption.mask
+                      h3 #{career.CAREER_TITLE}
+                      span #{career.CAREER_SUBTITLE}
+                -else
+                  figure.mix.portfolio-item
+                    img.img-responsive(src=career.CAREER_IMG, alt='Portfolio Item')
+                    a.fancybox(data-fancybox-type=career.CAREER_TYPE,href=career.CAREER_CONTENT, title=career.CAREER_CONTENT_TEXT, rel='portfolio')
+                      span.plus
+                    figcaption.mask
+                      h3 #{career.CAREER_TITLE}
+                      span #{career.CAREER_SUBTITLE}
+          // slider 2
+          .item
+            .projects.clearfix
+              -each career2 in items2
+                -if (career2.CAREER_TYPE == "iframe")
+                  figure.mix.portfolio-item
+                    img.img-responsive(src=career2.CAREER_IMG, alt='Portfolio Item')
+                    a.fancybox(data-fancybox-type=career2.CAREER_TYPE,href=career2.CAREER_CONTENT, title=career2.CAREER_CONTENT_TEXT, rel='')
+                      span.plus
+                    figcaption.mask
+                      h3 #{career2.CAREER_TITLE}
+                      span #{career2.CAREER_SUBTITLE}
+                -else
+                  figure.mix.portfolio-item
+                    img.img-responsive(src=career2.CAREER_IMG, alt='Portfolio Item')
+                    a.fancybox(data-fancybox-type=career2.CAREER_TYPE,href=career2.CAREER_CONTENT, title=career2.CAREER_CONTENT_TEXT, rel='portfolio')
+                      span.plus
+                    figcaption.mask
+                      h3 #{career2.CAREER_TITLE}
+                      span #{career2.CAREER_SUBTITLE}
+        // end .projects
+        // slider dots
+        ol.carousel-indicators
+          li.active(data-target='#career-carousel', data-slide-to='0')
+          li(data-target='#career-carousel', data-slide-to='1')
+        // slider next & prev
+        nav#career-nav-arrows.nav-arrows.hidden-xs.hidden-sm.visible-md.visible-lg
+          a.sl-prev.hidden-xs(href='#career-carousel', data-slide='prev')
+            i.fa.fa-angle-left.fa-3x
+          a.sl-next(href='#career-carousel', data-slide='next')
+            i.fa.fa-angle-right.fa-3x
+    //
+      End #Career
+      ==========================

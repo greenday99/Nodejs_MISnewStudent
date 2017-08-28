@@ -1,0 +1,59 @@
+/*============================================================
+    Course
+============================================================*/
+
+#course {
+    background-color: #fff;
+    padding: 80px;
+    overflow: hidden;
+}
+
+#course .contact-details {
+    margin: 70px 0;
+}
+
+#course .contact-details h2 {
+    font-size: 20px;
+}
+
+#course .contact-details h2 span {
+    display: block;
+    color: #009EE3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+#course .contact-details h2::after {
+    border: solid 2px #3dc9b3;
+}
+
+#course .light-box {
+    background-color: #fff;
+    -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
+    -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
+    box-shadow: 0px 3px 0px 0px #f0f2f4;
+    padding: 20px 0;
+}
+
+#course .light-box:hover,
+#course .light-box:focus {
+    -webkit-box-shadow: 0px 3px 0px 0px #009EE3;
+    -moz-box-shadow: 0px 3px 0px 0px #009EE3;
+    box-shadow: 0px 3px 0px 0px #009EE3;
+}
+
+#course .box-hover {
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+}
+
+#course .box-hover:hover,
+#course .box-hover:focus {
+    transform: translate(0, -15px);
+    -webkit-transform: translate(0, -15px);
+    -ms-transform: translate(0, -15px);
+}

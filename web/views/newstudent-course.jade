@@ -1,0 +1,53 @@
+//doctype html
+
+extends newstudent-activities-modal
+
+block newstudent-course
+  section#course.dark-bg.text-center.section-padding.contact-wrap
+      //nav
+      //section#contact.dark-bg.text-center.section-padding.contact-wrap
+      .container
+        .row
+          .section-title.text-center.wow.fadeInDown
+            h2 核心課程
+            br
+            p
+              |本系大學部之教學特色
+            br
+            p
+              |一、著重實務訓練
+            br
+            p
+              |二、專業技術訓練
+            br
+            p
+              |三、上機測試
+            br
+            p
+              |四、資訊系統專題發表會
+            br
+            p
+              |五、產業實習
+            br
+        .row.contact-details(style='margin: 15px 0 0 0;')
+          each course in courses
+            .col-md-3
+              .light-box.box-hover
+                h2
+                  i.fa.fa-file-text-o
+                  span #{course.center_class}
+                button.btn.btn-info.btn-md(type='button', data-toggle='modal', data-target='#course#{course.interview_id}') c l i c k
+              // Modal
+              .modal.fade(id='course#{course.interview_id}' role='dialog')
+                .modal-dialog
+                  // Modal content
+                  .modal-content
+                    .modal-header
+                      button.close(type='button', data-dismiss='modal') ×
+                      h4.modal-title #{course.center_class}
+                    .modal-body
+                      p(align='left')
+                        | #{course.class_interview}
+                    .modal-footer
+                      button.btn.btn-default(type='button', data-dismiss='modal') Close
+

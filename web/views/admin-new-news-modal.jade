@@ -1,0 +1,91 @@
+//修改消息內容
+#editDetail.modal.fade(role='dialog')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal') ×
+        h4.modal-title 修改詳情
+      .modal-body
+        .form-group
+          input#newsCode.form-control.margin-buttom-10(type='text' value="" style='display: none;')
+        .form-group
+          input#newsTitle.form-control.margin-buttom-10(type='text' value="")
+        .form-group.margin-top-20
+          textarea#newsContent.ckeditor
+      .modal-footer
+        a#submitEditDetail.btn.btn-danger(type='button') 確認修改
+
+//新增timeline
+#newNewsTimeLineModal.modal.fade(role='dialog')
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal') ×
+        h4.modal-title 新增時間軸
+      .modal-body
+        .form-group
+          label 標題
+          input#newNewsTimeLineTitle.form-control.margin-buttom-10(type='text' value="" required='')
+        .form-group
+          label 活動類型
+          select#newNewsClass.form-control.margin-buttom-10
+        .form-group
+          label 重要程度
+          select#newNewsImpClass.form-control.margin-buttom-10
+        .form-group
+          label 開始日期
+          input#newNewsStartDate.form-control.margin-buttom-10(type='date' placeholder="1990-01-01" value="" required='')
+        .form-group
+          label 開始時間(hh:mm，可選)
+          input#newNewsStartTime.form-control.margin-buttom-10(type='time' placeholder="00:00" value="")
+        .form-group
+          label 地點(可選)
+          input#newNewsLocation.form-control.margin-buttom-10(type='text' value="")
+      .modal-footer
+        a#submitNewTimeline.btn.btn-danger(type='button') 新增
+
+//修改現有的timeline內容
+#editTimeLine.modal.fade(role='dialog')
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal') ×
+        h4.modal-title 修改時間軸
+      .modal-body
+        .form-group
+          input#newsTimeLineCode.form-control.margin-buttom-10(type='text' value="" style='display: none;' required='')
+        .form-group
+          label 標題
+          input#newsTimeLineTitle.form-control.margin-buttom-10(type='text' value="" required='')
+        .form-group
+          label 活動類型
+          select#newsClass.form-control.margin-buttom-10
+        .form-group
+          label 重要程度
+          select#newsImpClass.form-control.margin-buttom-10
+        .form-group
+          label 開始日期
+          input#newsStartDate.form-control.margin-buttom-10(type='date' placeholder="1990-01-01" value="" required='')
+        .form-group
+          label 開始時間(hh:mm，可選)
+          input#newsStartTime.form-control.margin-buttom-10(type='time' placeholder="00:00" value="")
+        .form-group
+          label 地點(可選)
+          input#newsLocation.form-control.margin-buttom-10(type='text' value="")
+      .modal-footer
+        a#deleteNews.btn.btn-warning(data-toggle='modal', data-target='#newsDelete') 刪除本條
+        a#editTimeLineConfirm.btn.btn-danger(type='button') 確認修改
+
+
+#newsDelete.modal.fade(role='dialog')
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal') ×
+        h4.modal-title 刪除消息
+      .modal-body
+        p 刪除後將無法撤銷！
+      .modal-footer
+        button.btn.btn-default(type='button', data-dismiss='modal') 取消
+        a#deleteConfirm.btn.btn-danger(type='button') 確認刪除
+

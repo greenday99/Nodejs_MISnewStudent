@@ -1,0 +1,73 @@
+/*============================================================
+    News
+============================================================*/
+
+#news {
+    padding-bottom: 20px;
+}
+
+#btnBlock {
+    margin-bottom: 20px;
+}
+
+#newsBlock {
+    margin-bottom: 20px;
+}
+
+.news-title {
+    text-align: center;
+    color: #5B5B5B;
+}
+
+.news-title h2 {
+    margin: 0;
+}
+
+.news-title h2::after {
+    margin: 0;
+}
+
+.news-classPubTime {
+    text-align: center;
+    color: #6C6C6C;
+}
+
+.preBtn {
+    float: left;
+    width: 97%;
+}
+
+.nextBtn {
+    float: left;
+    width: 3%;
+}
+
+
+/*============================================================
+    News-timeline
+============================================================*/
+
+.group_3 {
+    font-size: 16px;
+    background-color: #D2E9FF;
+}
+
+.group_2 {
+    font-size: 16px;
+    background-color: #DFFFDF;
+}
+
+.group_1 {
+    font-size: 16px;
+    background-color: #FCFCFC;
+}
+
+.vis-item {
+    z-index: 1;
+}
+
+.vis-item p {
+    color: #272727;
+    margin: 0;
+    padding: 0;
+}

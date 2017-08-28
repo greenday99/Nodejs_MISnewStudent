@@ -1,0 +1,190 @@
+
+/*============================================================
+    Career
+============================================================*/
+
+#career {
+    background-color: #eae3df;
+    padding: 80px;
+    overflow: hidden;
+}
+
+#career .projects {
+    width: 100%;
+}
+
+#career .project-filter {
+    margin-bottom: 40px;
+}
+
+#career .project-filter ul li {
+    padding: 0;
+}
+
+#career .project-filter ul li a {
+    color: #000;
+    display: block;
+    line-height: 18px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+#career .project-filter ul li a:hover,
+#career .project-filter ul li a.active {
+    background-color: #00C7FC;
+    color: #fff;
+}
+
+#career .mix {
+    display: none;
+}
+
+#career .portfolio-item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 25%;
+}
+
+#career .plus {
+    background: url("../img/icons/plus.png") no-repeat scroll center center #0faed9;
+    border-radius: 50%;
+    display: block;
+    height: 80px;
+    left: 50%;
+    margin: -40px 0 0 -40px;
+    position: absolute;
+    top: -41px;
+    width: 80px;
+    -webkit-transition: 0.3s ease-out 0s;
+    -moz-transition: 0.3s ease-out 0s;
+    -ms-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+}
+
+#career figcaption.mask {
+    background-color: #eae3df;
+    bottom: -101px;
+    left: 0;
+    padding: 30px 0 30px 30px;
+    position: absolute;
+    width: 100%;
+    -webkit-transition: 0.3s ease-out 0s;
+    -moz-transition: 0.3s ease-out 0s;
+    -ms-transition: 0.3s ease-out 0s;
+    -o-transition: 0.3s ease-out 0s;
+    transition: 0.3s ease-out 0s;
+}
+
+#career .portfolio-item:hover figcaption.mask {
+    bottom: 0;
+}
+
+#career .portfolio-item:hover .plus {
+    top: 30%;
+}
+
+#career figcaption.mask h3 {
+    color: #1f2021;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+#career figcaption.mask span {
+    color: #0FAED9;
+}
+
+
+/*********************************
+*******Slider for Career******
+*********************************/
+
+#career .career-projects {
+    width: 100%;
+}
+
+#career-carousel .career-carousel-inner .item {
+    background-size: cover;
+}
+
+#career-carousel .slider-content {
+    height: 100%;
+}
+
+#career-carousel .carousel-caption {
+    left: 0;
+    top: 0;
+    z-index: 11;
+    text-align: left;
+}
+
+#career .carousel-caption > div {
+    background-color: rgba(15, 116, 143, 0.8);
+    padding: 60px 50px 80px 20%;
+    position: absolute;
+    top: 25%;
+    width: 76%;
+}
+
+#career-carousel .carousel-inner h2 {
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 50px;
+    margin-bottom: 20px;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+#career-carousel .carousel-inner p {
+    color: #FFFFFF;
+    line-height: 28px;
+    font-size: 13px;
+    margin-top: 0;
+    text-shadow: none;
+}
+
+#career-nav-arrows > a {
+    border: 1px solid #009EE3;
+    color: #009EE3;
+    display: block;
+    height: 60px;
+    line-height: 76px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 60px;
+    z-index: 20;
+    margin-top: -60px;
+    margin-left: -120px;
+    margin-right: -100px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+#career-nav-arrows > a.sl-prev {
+    left: 50px;
+}
+
+#career-nav-arrows > a.sl-next {
+    right: 50px;
+}
+
+#career-nav-arrows > a.sl-next:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #009EE3;
+}
+
+#career-carousel .carousel-indicators {
+    position: relative;
+    margin-top: 60px;
+}
+
+#career .carousel-indicators .active {
+    background-color: #00c7fc;
+    border: 0;
+}

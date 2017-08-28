@@ -1,0 +1,169 @@
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en')
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='en')
+//if IE 8
+  html.no-js.lt-ie9(lang='en')
+// [if gt IE 8] <!
+html.no-js(lang='en')
+  // <![endif]
+  head
+    include newstudent-meta
+    // Site Title
+    title 輔仁大學 - 高中生專區
+    include newstudent-css
+  body
+    //
+      Fixed Navigation
+      ====================================
+    header#navigation.navbar-fixed-top
+      .container
+        .navbar-header
+          // responsive nav button
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          // /responsive nav button
+          // logo
+          h1.navbar-brand
+            a(href='#home')
+              img(src='/img/logo.png', alt='輔仁大學資訊管理學系 高中生專區')
+          // /logo
+        // main nav
+        nav.collapse.navigation.navbar-collapse.navbar-right(role='navigation')
+          ul#nav.nav.navbar-nav
+            li.current
+              a(href='#home') 返回頂部
+            li
+              a(href='#news') 最新消息
+            li
+              a(href='#activities') 系上活動
+            li
+              a(href='#course') 核心課程
+            li
+              a(href='#career') 未來發展
+            li
+              a(href='http://127.0.0.1:8080/practice1/MISwebsiteIndex', target='_blank') 系所主頁
+        // /main nav
+    //
+      End Fixed Navigation
+      ====================================
+    //
+      Home Slider
+      ====================================
+    section#home
+      #home-carousel.carousel.slide(data-interval='false')
+        ol.carousel-indicators
+          li.active(data-target='#home-carousel', data-slide-to='0')
+          li(data-target='#home-carousel', data-slide-to='1')
+          li(data-target='#home-carousel', data-slide-to='2')
+        // /.carousel-indicators
+        .carousel-inner
+          .item.active(style="background-image: url('/img/slider/bg1.jpg')")
+            .carousel-caption
+              .animated.bounceInRight
+                h2
+                  | 歡迎蒞臨 輔仁大學資訊管理學系
+                  br
+                  | 高中生專區
+                p 本系教學目標旨在讓同學能應用資訊科技解決組織的管理問題，因此，除資訊科技與管理理論之傳授外，整合二者於資訊管理與資訊系統之課程更為本系之教學重心。
+          .item(style="background-image: url('/img/slider/bg2.jpg')")
+            .carousel-caption
+              .animated.bounceInDown
+                h2
+                  | 歡迎加入
+                  br
+                  | 輔仁大學資訊管理學系
+                p
+                  | 本校前副校長張宇恭教授於民國70年， 有感於世界潮流之所趨及未來社會對資訊管理人才之需求， 創立了全國第一所資訊管理學系。 多年來無論在資訊管理人才之培養，以及資訊管理學術活動的參與上， 均力求有所貢獻，不落人後。 我們期望將關懷投注於廣大的社會上，與工商企業界緊密結合， 以本系為中心，結合學生，工商企業界及政府機構之力量， 促進提昇區域性資訊管理水準。
+          .item(style="background-image: url('/img/slider/bg3.jpg')")
+            .carousel-caption
+              .animated.bounceInUp
+                h2
+                  | 我們是
+                  br
+                  | 輔仁大學資訊管理學系
+                p 很開心各位選擇加入我們這個大家庭，本系有豐富的教學資源可供未來莘莘學子們使用。
+        // /.carousel-inner
+        nav#nav-arrows.nav-arrows.hidden-xs.hidden-sm.visible-md.visible-lg
+          a.sl-prev.hidden-xs(href='#home-carousel', data-slide='prev')
+            i.fa.fa-angle-left.fa-3x
+          a.sl-next(href='#home-carousel', data-slide='next')
+            i.fa.fa-angle-right.fa-3x
+    //
+      End #home Slider
+      ==========================
+    //
+      #News
+      ==========================
+    //- include newstudent-news
+    //- include newstudent-news-modal
+    block newstudent-news
+    block newstudent-news-modal
+    //
+      #Activities
+      ==========================
+    //- include newstudent-activities
+    //- include newstudent-activities-modal
+    block newstudent-activities
+    block newstudent-activities-modal
+    //
+      #Course
+      ==========================
+    //- include newstudent-course
+    //- include newstudent-course-modal
+    block newstudent-course
+    block newstudent-course-modal
+    //
+      #Career
+      ==========================
+    //- include newstudent-career
+    //- include newstudent-career-modal
+    block newstudent-career
+    block newstudent-career-modal
+    block newstudent-block
+    //
+      #footer
+      ==========================
+    footer#footer.text-center
+      .container
+        .row
+          .col-md-6
+            h3
+              a(href='http://www.fju.edu.tw/aboutFju.jsp?labelID=7') 校園鳥瞰圖
+            .thumbs-gallery
+              iframe(width='470', height='200', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='https://maps.google.com/maps?f=q&source=s_q&hl=zh-TW&geocode=&q=輔仁大學&aq=&sll=37.0625,-95.677068&sspn=46.677964,107.138672&ie=UTF8&hq=輔仁大學&t=m&ll=25.036227,121.432142&spn=0.003888,0.010085&z=15&iwloc=A&output=embed')
+            // <div class="clearfix"></div>
+          // End GoogleMap
+          // ContactInfo
+          .col-md-6
+            h3
+              a(href='#') 輔仁大學資訊管理學系
+            ul
+              li
+                a.fa.fa-home(href='#')
+                  | 新北市新莊區242中正路510號 利瑪竇大樓
+                  | LM306
+              li
+                a.fa.fa-phone(href='#')
+                  | 碩士班祕書室 TEL:(02)29052940
+                  | FAX:(02)29052182
+              li
+                a.fa.fa-phone(href='#')
+                  | 大學部祕書室 TEL:(02)29052666
+                  | FAX:(02)29052182
+              li
+                a.fa.fa-comment-o(href='#') 歡迎給予我們建議 →
+          .col-lg-12
+            .copyright
+              p
+                | Copyright (c) 2013
+                a(href='http://www.fju.edu.tw', target='_blank') Fu-Jen Catholic University
+                |  Institute of Information Management. All Rights Reserved.
+    //
+      End #footer
+      ==========================
+    include newstudent-js

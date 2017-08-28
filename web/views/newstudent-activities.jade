@@ -1,0 +1,233 @@
+//doctype html
+
+
+extends newstudent-news-modal
+
+block newstudent-activities
+    section#activities
+      .section-title.text-center.wow.fadeInDown
+        h2 系上活動
+        br
+        p
+          | 歡迎來到輔仁大學資管系學會
+        br
+        p
+          | 屬於我們的精彩瞬間與永恆回憶
+        br
+        p
+          | 我們永遠充滿滿滿滿的活力!!
+        br
+        p
+          | 不怕你不來!  只怕你不知道!
+        br
+        p
+          | 快來加入我們的行列吧!
+        br
+        br
+        br
+        br
+
+      // 抓取資料庫進行展現時應該需要做分頁處理
+      #activity-carousel.carousel.slide(data-interval='false')
+        .carousel-inner
+          // slider 1
+          .item.active
+            .projects.clearfix
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesA[0].ITEM_URL}' width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picA')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesAName[0].IMACT_NAME}
+
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesB[0].ITEM_URL}'  width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picB')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesBName[0].IMACT_NAME}
+
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesC[0].ITEM_URL}'  width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picC')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesCName[0].IMACT_NAME}
+
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesD[0].ITEM_URL}'  width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picD')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesDName[0].IMACT_NAME}
+
+          // slider 2
+          .item
+            .projects.clearfix
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesE[0].ITEM_URL}' width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picE')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesEName[0].IMACT_NAME}
+
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesF[0].ITEM_URL}' width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picF')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesFName[0].IMACT_NAME}
+
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesG[0].ITEM_URL}' width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picG')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesGName[0].IMACT_NAME}
+
+              figure.mix.portfolio-item
+                img.img-responsive(src='#{activitiesH[0].ITEM_URL}' width='372' height='290', alt='Portfolio Item')
+                a(data-toggle='modal', data-target='#picH')
+                  span.plus
+                figcaption.mask
+                  h3 #{activitiesHName[0].IMACT_NAME}
+
+        // end #projects
+        // slider dots
+        ol.carousel-indicators
+          li.active(data-target='#activity-carousel', data-slide-to='0')
+          li(data-target='#activity-carousel', data-slide-to='1')
+        // slider next & prev
+        nav#activity-nav-arrows.nav-arrows.hidden-xs.hidden-sm.visible-md.visible-lg
+          a.sl-prev.hidden-xs(href='#activity-carousel', data-slide='prev')
+            i.fa.fa-angle-left.fa-3x
+          a.sl-next(href='#activity-carousel', data-slide='next')
+            i.fa.fa-angle-right.fa-3x
+
+      //點擊相簿後可觀看照片
+
+      //相簿A
+      .modal.fade(id='picA' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic1
+                each activity in activitiesA
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      //相簿B
+      .modal.fade(id='picB' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic2
+                each activity in activitiesB
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      //相簿C
+      .modal.fade(id='picC' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic3
+                each activity in activitiesC
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      //相簿D
+      .modal.fade(id='picD' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic4
+                each activity in activitiesD
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      //相簿E
+      .modal.fade(id='picE' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic5
+                each activity in activitiesE
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      //相簿F
+      .modal.fade(id='picF' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic6
+                each activity in activitiesF
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      //相簿G
+      .modal.fade(id='picG' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic7
+                each activity in activitiesG
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      //相簿H
+      .modal.fade(id='picH' role='dialog')
+        .modal-dialog.modal-lg
+          // Modal content
+          .modal-content
+              //.modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title
+              //.modal-body
+              #pic8
+                each activity in activitiesH
+                  img(src='#{activity.ITEM_URL}', width='850', height='730')
+            //.modal-footer
+              //button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      br
+      br
+    //
+      End #Activities
+      ==========================

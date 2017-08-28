@@ -1,0 +1,216 @@
+﻿//doctype html
+extends admin-course-modal
+
+block admin-career
+    section#career
+      //.row
+      .section-title.text-center.wow.fadeInDown
+        h2 未來發展
+
+      .container
+        .col-md-12.margin-top-30
+          #hornav.pull-right.visible-lg
+            a(data-toggle='modal', data-target='#careerCreate', class='btn btn-success') 新增職業
+            a(data-toggle='modal', data-target='#careerCreateIframe', class='btn btn-success') 新增iframe
+
+      #content.container
+        .row.margin-top-10
+        div
+          h1="iframe列表"
+          table.table.table-hover(width='100%')
+            thead
+              tr
+                th careerid
+                th 顯示順序
+                th iframe名稱
+                th iframe說明
+                th 縮圖
+                th 網頁
+                th 頁面說明
+                th 修改
+
+            -each iframe in items1
+              tbody
+                tr
+                  td=iframe.CAREER_ID
+                  td=iframe.CAREER_ORDER
+                  td=iframe.CAREER_TITLE
+                  td=iframe.CAREER_SUBTITLE
+                  td=iframe.CAREER_IMG
+                  td=iframe.CAREER_CONTENT
+                  td=iframe.CAREER_CONTENT_TEXT
+                  td
+                    a(data-toggle='modal', data-target='#careeri#{iframe.CAREER_ID}', class='btn btn-warning') 修改
+                    a(href='/admin/delete/#{iframe.CAREER_ID}', class='btn btn-danger') 刪除
+
+              .modal.fade(id='careeri#{iframe.CAREER_ID}' role="dialog")
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      button.close(type='button', data-dismiss='modal') ×
+                      h4.modal-title 修改
+                    form(method='post', action='/admin/update/#{iframe.CAREER_ID}')
+                      .modal-body
+                          div.clearfix
+                          div
+                            label ID
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_ID' value=iframe.CAREER_ID readonly="readonly" style="width:400px;")
+                            label 顯示順序
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_ORDER' value=iframe.CAREER_ORDER style="width:400px;" placeholder="請輸入1~8，0則為不顯示")
+                            label iframe名稱
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_TITLE' value=iframe.CAREER_TITLE style="width:400px;")
+                            label iframe說明
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_SUBTITLE' value=iframe.CAREER_SUBTITLE style="width:400px;")
+                            label 縮圖
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_IMG' value=iframe.CAREER_IMG style="width:400px;")
+                            label 網頁
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_CONTENT' value=iframe.CAREER_CONTENT style="width:400px;")
+                            label 頁面說明
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_CONTENT_TEXT' value=iframe.CAREER_CONTENT_TEXT style="width:400px;")
+                      .modal-footer
+                        input(type='submit', value='修改')
+          br
+
+        div
+          h1="職業列表"
+          table.table.table-hover(width='100%')
+            thead
+              tr
+                th careerid
+                th 顯示順序
+                th 職業名稱
+                th 平均薪資
+                th 縮圖
+                th 原圖
+                th 工作內容
+                th 修改
+            -each career in items2
+              tbody
+                tr
+                  td=career.CAREER_ID
+                  td=career.CAREER_ORDER
+                  td=career.CAREER_TITLE
+                  td=career.CAREER_SUBTITLE
+                  td=career.CAREER_IMG
+                  td=career.CAREER_CONTENT
+                  td=career.CAREER_CONTENT_TEXT
+                  td
+                    a(data-toggle='modal', data-target='#career#{career.CAREER_ID}', class='btn btn-warning') 修改
+                    a(href='/admin/delete/#{career.CAREER_ID}', class='btn btn-danger') 刪除
+
+              .modal.fade(id='career#{career.CAREER_ID}' role="dialog")
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      button.close(type='button', data-dismiss='modal') ×
+                      h4.modal-title 修改
+                    form(method='post', action='/admin/update/#{career.CAREER_ID}')
+                      .modal-body
+                          div.clearfix
+                          div
+                            label ID
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_ID' value=career.CAREER_ID readonly="readonly" style="width:400px;")
+                            label 顯示順序
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_ORDER' value=career.CAREER_ORDER style="width:400px;" placeholder="請輸入1~8，0則為不顯示")
+                            label iframe名稱
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_TITLE' value=career.CAREER_TITLE style="width:400px;")
+                            label iframe說明
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_SUBTITLE' value=career.CAREER_SUBTITLE style="width:400px;")
+                            label 縮圖
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_IMG' value=career.CAREER_IMG style="width:400px;")
+                            label 網頁
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_CONTENT' value=career.CAREER_CONTENT style="width:400px;")
+                            label 頁面說明
+                            div.input
+                              input.form-control.margin-buttom-10(name='CAREER_CONTENT_TEXT' value=career.CAREER_CONTENT_TEXT style="width:400px;")
+                      .modal-footer
+                        input(type='submit', value='修改')
+
+          .modal.fade(id='careerCreate' role="dialog")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal') ×
+                  h4.modal-title 修改
+                form(method='post', action='/admin/create')
+                  .modal-body
+                      div.clearfix
+                        label ID
+                        div.input
+                          //input.form-control.margin-buttom-10(name='CAREER_ID'  readonly="readonly")
+                          input.form-control.margin-buttom-10(name='CAREER_ID' style="width:400px;" value='')
+                        label Type
+                        div.input
+                          input.form-control.margin-buttom-10(name='CAREER_TYPE'  readonly="readonly" value="")
+                        label 顯示順序
+                        div.input
+                          input.form-control.margin-buttom-10(name='CAREER_ORDER' style="width:400px;" placeholder="請輸入1~8，0則為不顯示")
+                        label 職業名稱
+                        div.input
+                          input.form-control.margin-buttom-10(name='CAREER_TITLE' style="width:400px;")
+                        label 平均薪資
+                        div.input
+                          input.form-control.margin-buttom-10(name='CAREER_SUBTITLE' style="width:400px;")
+                        label 工作內容
+                        div.input
+                          input.form-control.margin-buttom-10(name='CAREER_CONTENT_TEXT' style="width:400px;")
+                        label 縮圖
+                        div.input
+                          input.form-control.margin-buttom-10(name='CAREER_IMG' style="width:400px;")
+                        label 原圖
+                        div.input
+                          input.form-control.margin-buttom-10(name='CAREER_CONTENT' style="width:400px;")
+                  .modal-footer
+                    input(type='submit', value='新增職業')
+
+          .modal.fade(id='careerCreateIframe' role="dialog")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal') ×
+                  h4.modal-title 修改
+                form(method='post', action='/admin/create')
+                  .modal-body
+                      div.clearfix
+                      label ID
+                      div.input
+                        //input.form-control.margin-buttom-10(name='CAREER_ID'  readonly="readonly")
+                        input.form-control.margin-buttom-10(name='CAREER_ID' style="width:400px;" value='')
+                      label Type
+                      div.input
+                        input.form-control.margin-buttom-10(name='CAREER_TYPE'  readonly="readonly" value="iframe")
+                      label 顯示順序
+                      div.input
+                        input.form-control.margin-buttom-10(name='CAREER_ORDER' style="width:400px;" placeholder="請輸入1~8，0則為不顯示")
+                      label iframe名稱
+                      div.input
+                        input.form-control.margin-buttom-10(name='CAREER_TITLE' style="width:400px;")
+                      label iframe說明
+                      div.input
+                        input.form-control.margin-buttom-10(name='CAREER_SUBTITLE' style="width:400px;")
+                      label 縮圖
+                      div.input
+                        input.form-control.margin-buttom-10(name='CAREER_IMG' style="width:400px;")
+                      label 網頁
+                      div.input
+                        input.form-control.margin-buttom-10(name='CAREER_CONTENT' style="width:400px;")
+                      label 頁面說明
+                      div.input
+                        input.form-control.margin-buttom-10(name='CAREER_CONTENT_TEXT' style="width:400px;")
+                  .modal-footer
+                    input(type='submit', value='新增iframe')
+
+

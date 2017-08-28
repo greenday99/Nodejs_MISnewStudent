@@ -1,0 +1,31 @@
+//doctype html
+
+extends newstudent
+
+block newstudent-news
+    section#news
+      .section-title.text-center.wow.fadeInDown
+        h2 最新消息
+
+      .container
+        table#btnBlock.table(width="100%")
+          tr
+            td.preBtn
+              a#newsPre.sl-pre(href="javascript:void(0);" onClick="goPreNews()" style="display:block;")
+                i.fa.fa-angle-left.fa-4x
+            td.nextBtn
+              a#newsNext.sl.next(href="javascript:void(0);" onClick="goNextNews()" style="display:none;")
+                i.fa.fa-angle-right.fa-4x
+
+        table#newsBlock.table(width="100%")
+          tr
+            th.news-title
+          tr
+            td.news-classPubTime
+          tr
+            td.news-content
+
+      #visualization
+    //
+      End #News
+      ==========================

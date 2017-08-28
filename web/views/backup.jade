@@ -1,0 +1,494 @@
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en')
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='en')
+//if IE 8
+  html.no-js.lt-ie9(lang='en')
+// [if gt IE 8] <!
+html.no-js(lang='en')
+  // <![endif]
+  head
+    // Mobile Specific Meta
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Always force latest IE rendering engine
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    // Meta Keyword
+    meta(name='輔仁大學', content='輔仁大學 高中生 入學 課程 活動 就業 消息')
+    // meta character set
+    meta(charset='utf-8')
+    // Site Title
+    title 輔仁大學 - 高中生專區
+    //
+      Google Fonts
+      =============================================
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,300', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300', rel='stylesheet', type='text/css')
+    //
+      CSS
+      =============================================
+    // Fontawesome
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+    // Bootstrap
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    // Fancybox
+    link(rel='stylesheet', href='/css/jquery.fancybox.css')
+    // owl carousel
+    link(rel='stylesheet', href='/css/owl.carousel.css')
+    // Animate
+    link(rel='stylesheet', href='/css/animate.css')
+    // Main Stylesheet
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href='/css/news.css')
+    link(rel='stylesheet', href='/css/activities.css')
+    link(rel='stylesheet', href='/css/course.css')
+    link(rel='stylesheet', href='/css/career.css')
+    // Main Responsive
+    link(rel='stylesheet', href='/css/responsive.css')
+    // Modernizer Script for old Browsers
+    script(src='/js/vendor/modernizr-2.6.2.min.js')
+  body
+    //
+      Fixed Navigation
+      ====================================
+    header#navigation.navbar-fixed-top
+      .container
+        .navbar-header
+          // responsive nav button
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          // /responsive nav button
+          // logo
+          h1.navbar-brand
+            a(href='#home')
+              img(src='/img/logo.png', alt='輔仁大學資訊管理學系 高中生專區')
+          // /logo
+        // main nav
+        nav.collapse.navigation.navbar-collapse.navbar-right(role='navigation')
+          ul#nav.nav.navbar-nav
+            li.current
+              a(href='#home') 返回頂部
+            li
+              a(href='#news') 最新消息
+            li
+              a(href='#activities') 系上活動
+            li
+              a(href='#course') 核心課程
+            li
+              a(href='#career') 未來發展
+            li
+              a(href='http://127.0.0.1:8080/practice1/MISwebsiteIndex', target='_blank') 系所主頁
+        // /main nav
+    //
+      End Fixed Navigation
+      ====================================
+    //
+      Home Slider
+      ====================================
+    section#home
+      #home-carousel.carousel.slide(data-interval='false')
+        ol.carousel-indicators
+          li.active(data-target='#home-carousel', data-slide-to='0')
+          li(data-target='#home-carousel', data-slide-to='1')
+          li(data-target='#home-carousel', data-slide-to='2')
+        // /.carousel-indicators
+        .carousel-inner
+          .item.active(style="background-image: url('/img/slider/bg1.jpg')")
+            .carousel-caption
+              .animated.bounceInRight
+                h2
+                  | 歡迎蒞臨 輔仁大學資訊管理學系
+                  br
+                  | 高中生專區
+                p 本系教學目標旨在讓同學能應用資訊科技解決組織的管理問題，因此，除資訊科技與管理理論之傳授外，整合二者於資訊管理與資訊系統之課程更為本系之教學重心。
+          .item(style="background-image: url('/img/slider/bg2.jpg')")
+            .carousel-caption
+              .animated.bounceInDown
+                h2
+                  | 歡迎加入
+                  br
+                  | 輔仁大學資訊管理學系
+                p
+                  | 本校前副校長張宇恭教授於民國70年， 有感於世界潮流之所趨及未來社會對資訊管理人才之需求， 創立了全國第一所資訊管理學系。 多年來無論在資訊管理人才之培養，以及資訊管理學術活動的參與上， 均力求有所貢獻，不落人後。 我們期望將關懷投注於廣大的社會上，與工商企業界緊密結合， 以本系為中心，結合學生，工商企業界及政府機構之力量， 促進提昇區域性資訊管理水準。
+          .item(style="background-image: url('/img/slider/bg3.jpg')")
+            .carousel-caption
+              .animated.bounceInUp
+                h2
+                  | 我們是
+                  br
+                  | 輔仁大學資訊管理學系
+                p 很開心各位選擇加入我們這個大家庭，本系有豐富的教學資源可供未來莘莘學子們使用。
+        // /.carousel-inner
+        nav#nav-arrows.nav-arrows.hidden-xs.hidden-sm.visible-md.visible-lg
+          a.sl-prev.hidden-xs(href='#home-carousel', data-slide='prev')
+            i.fa.fa-angle-left.fa-3x
+          a.sl-next(href='#home-carousel', data-slide='next')
+            i.fa.fa-angle-right.fa-3x
+    //
+      End #home Slider
+      ==========================
+    //
+      #News
+      ==========================
+    section#news
+      .section-title.text-center.wow.fadeInDown
+        h2 最新消息
+        p
+          | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+      .container
+        .row
+          .col-md-5.col-md-offset-1.wow.fadeInLeft
+            .subtitle.text-center
+              h3 Testimonials
+              p
+                | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+            #testimonial
+              .tst-item.clearfix
+                .tst-single.clearfix
+                  img.img-circle(src='/img/client/1.jpg', alt='Client')
+                  .tst-content
+                    p
+                      | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                    span John Doe,CEO
+                .tst-single.clearfix
+                  img.img-circle(src='/img/client/2.jpg', alt='Client')
+                  .tst-content
+                    p
+                      | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                    span John Doe,CEO
+              .tst-item
+                .tst-single.clearfix
+                  img.img-circle(src='/img/client/3.jpg', alt='Client')
+                  .tst-content
+                    p
+                      | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                    span John Doe,CEO
+                .tst-single.clearfix
+                  img.img-circle(src='/img/client/1.jpg', alt='Client')
+                  .tst-content
+                    p
+                      | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                    span John Doe,CEO
+              .tst-item
+                .tst-single.clearfix
+                  img.img-circle(src='/img/client/2.jpg', alt='Client')
+                  .tst-content
+                    p
+                      | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                    span John Doe,CEO
+                .tst-single.clearfix
+                  img.img-circle(src='/img/client/3.jpg', alt='Client')
+                  .tst-content
+                    p
+                      | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                    span John Doe,CEO
+            // end #testimonial
+          // end .col-md-5
+          .col-md-5.col-md-offset-1.wow.fadeInRight
+            .subtitle.text-center
+              h3 OUR SKILLS
+              p
+                | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+            .progress-bars
+              span
+                | HTML 5 -
+                small 95%
+              .progress(data-progress='95')
+                .bar
+              span
+                | CSS 3 -
+                small 93%
+              .progress(data-progress='93')
+                .bar
+              span
+                | PHP -
+                small 85%
+              .progress(data-progress='85')
+                .bar
+              span
+                | mySQL -
+                small 87%
+              .progress.kill-margin(data-progress='87')
+                .bar
+            // progress-bars
+          // end .col-md-5
+    //
+      End #News
+      ==========================
+    //
+      #Activities
+      ==========================
+    section#activities
+      .section-title.text-center.wow.fadeInDown
+        h2 系上活動
+        p
+          | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+      // 抓取資料庫進行展現時應該需要做分頁處理
+      #activity-carousel.carousel.slide(data-interval='false')
+        .carousel-inner
+          // slider 1
+          .item.active
+            .projects.clearfix
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-1.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-1.jpg', title='Title One', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-2.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-2.jpg', title='Title Two', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-3.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-3.jpg', title='Title Three', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-4.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-4.jpg', title='Title Four', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+          // slider 2
+          .item
+            .projects.clearfix
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-1.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-1.jpg', title='Title One', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-2.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-2.jpg', title='Title Two', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-3.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-3.jpg', title='Title Three', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-4.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-4.jpg', title='Title Four', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+        // end #projects
+        // slider dots
+        ol.carousel-indicators
+          li.active(data-target='#activity-carousel', data-slide-to='0')
+          li(data-target='#activity-carousel', data-slide-to='1')
+        // slider next & prev
+        nav#activity-nav-arrows.nav-arrows.hidden-xs.hidden-sm.visible-md.visible-lg
+          a.sl-prev.hidden-xs(href='#activity-carousel', data-slide='prev')
+            i.fa.fa-angle-left.fa-3x
+          a.sl-next(href='#activity-carousel', data-slide='next')
+            i.fa.fa-angle-right.fa-3x
+    //
+      End #Activities
+      ==========================
+    //
+      #Course
+      ==========================
+    section#course
+      .container
+        .row
+          .section-title.text-center.wow.fadeInDown
+            h2 核心課程
+            p
+              | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+        .row.contact-details
+          .col-md-4
+            .light-box.box-hover
+              h2
+                i.fa.fa-map-marker
+                span Address
+              p Level 6, 23 Pitt St, Sydney
+          .col-md-4
+            .light-box.box-hover
+              h2
+                i.fa.fa-mobile
+                span Phone
+              p +61 9 211 3747
+          .col-md-4
+            .light-box.box-hover
+              h2
+                i.fa.fa-paper-plane
+                span Email
+              p
+                a(href='#') hey@halcyondays.com
+    //
+      End #Course
+      ==========================
+    //
+      #Career
+      ==========================
+    section#career
+      .row
+        .section-title.text-center.wow.fadeInDown
+          h2 未來發展
+          p
+            | Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+      // 抓取資料庫進行展現時應該需要做分頁處理
+      #career-carousel.carousel.slide(data-interval='false')
+        .carousel-inner
+          // slider 1
+          .item.active
+            .projects.clearfix
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-1.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-1.jpg', title='Title One', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-2.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-2.jpg', title='Title Two', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-3.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-3.jpg', title='Title Three', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-4.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-4.jpg', title='Title Four', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+          // slider 2
+          .item
+            .projects.clearfix
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-1.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-1.jpg', title='Title One', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-2.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-2.jpg', title='Title Two', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-3.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-3.jpg', title='Title Three', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+              figure.mix.portfolio-item
+                img.img-responsive(src='/img/portfolio/portfolio-4.jpg', alt='Portfolio Item')
+                a.fancybox(href='/img/portfolio/portfolio-4.jpg', title='Title Four', rel='portfolio')
+                  span.plus
+                figcaption.mask
+                  h3 Awesome Image
+                  span Photography
+        // end .projects
+        // slider dots
+        ol.carousel-indicators
+          li.active(data-target='#career-carousel', data-slide-to='0')
+          li(data-target='#career-carousel', data-slide-to='1')
+        // slider next & prev
+        nav#career-nav-arrows.nav-arrows.hidden-xs.hidden-sm.visible-md.visible-lg
+          a.sl-prev.hidden-xs(href='#career-carousel', data-slide='prev')
+            i.fa.fa-angle-left.fa-3x
+          a.sl-next(href='#career-carousel', data-slide='next')
+            i.fa.fa-angle-right.fa-3x
+    //
+      End #Career
+      ==========================
+    //
+      #footer
+      ==========================
+    footer#footer.text-center
+      .container
+        .row
+          .col-md-6
+            h3
+              a(href='http://www.fju.edu.tw/aboutFju.jsp?labelID=7') 校園鳥瞰圖
+            .thumbs-gallery
+              iframe(width='470', height='200', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='https://maps.google.com/maps?f=q&source=s_q&hl=zh-TW&geocode=&q=輔仁大學&aq=&sll=37.0625,-95.677068&sspn=46.677964,107.138672&ie=UTF8&hq=輔仁大學&t=m&ll=25.036227,121.432142&spn=0.003888,0.010085&z=15&iwloc=A&output=embed')
+            // <div class="clearfix"></div>
+          // End GoogleMap
+          // ContactInfo
+          .col-md-6
+            h3
+              a(href='#') 輔仁大學資訊管理學系
+            ul
+              li
+                a.fa.fa-home(href='#')
+                  | 新北市新莊區242中正路510號 利瑪竇大樓
+                  | LM306
+              li
+                a.fa.fa-phone(href='#')
+                  | 碩士班祕書室 TEL:(02)29052940
+                  | FAX:(02)29052182
+              li
+                a.fa.fa-phone(href='#')
+                  | 大學部祕書室 TEL:(02)29052666
+                  | FAX:(02)29052182
+              li
+                a.fa.fa-comment-o(href='#') 歡迎給予我們建議 →
+          .col-lg-12
+            .copyright
+              p
+                | Copyright (c) 2013
+                a(href='http://www.fju.edu.tw', target='_blank') Fu-Jen Catholic University
+                |  Institute of Information Management. All Rights Reserved.
+    //
+      End #footer
+      ==========================
+    //
+      JavaScripts
+      ==========================
+    // main jQuery
+    script(src='/js/vendor/jquery-1.11.1.min.js')
+    // Bootstrap
+    script(src='/js/bootstrap.min.js')
+    // jquery.nav
+    script(src='/js/jquery.nav.js')
+    // Portfolio Filtering
+    script(src='/js/jquery.mixitup.min.js')
+    // Fancybox
+    script(src='/js/jquery.fancybox.pack.js')
+    // Parallax sections
+    script(src='/js/jquery.parallax-1.1.3.js')
+    // jQuery Appear
+    script(src='/js/jquery.appear.js')
+    // countTo
+    script(src='/js/jquery-countTo.js')
+    // owl carousel
+    script(src='/js/owl.carousel.min.js')
+    // WOW script
+    script(src='/js/wow.min.js')
+    // theme custom scripts
+    script(src='/js/main.js')

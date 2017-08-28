@@ -1,0 +1,68 @@
+﻿//doctype html
+
+extends admin-news-modal
+
+block admin-activities
+  section#activities.dark-bg.text-center.section-padding.contact-wrap
+    .container
+      .row
+        .section-title.text-center.wow.fadeInDown
+          h2 系上活動
+            a.btn.btn-success.btn-md(data-toggle='modal', data-target='#activitycreate') Ｃ ｒ ｅ ａ ｔ ｅ
+
+
+      .row.contact-details(style='margin: 15px 0 0 0;')
+        each activity in activities
+
+          .col-md-2
+            .light-box.box-hover
+              h6
+                span  #{activity.IMACT_NAME}
+
+             a(class='btn' data-toggle='modal' data-target='#activity#{activity.ITEM_CODE}' data-edit=activity.ITEM_CODE)
+              img(width='180', height='120',src='#{activity.ITEM_URL}')
+
+            .modal.fade(id='activity#{activity.ITEM_CODE}' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    button.close(type='button', data-dismiss='modal') ×
+                    h4.modal-title 修改 / 刪除 CODE: #{activity.ITEM_CODE}
+                  form(method='post', action='/admin/activities_update/#{activity.ITEM_CODE}')
+                    .modal-body
+                        div.clearfix
+                        div
+
+                          span 修改NAME:
+                          div
+                            textarea(rows='2', cols='30' name='IMACT_NAME') #{activity.IMACT_NAME}
+                          span 修改URL:
+                          div
+                            textarea(rows='4', cols='50' name='ITEM_URL') #{activity.ITEM_URL}
+                    .modal-footer
+                      a(href='/admin/activities_delete/#{activity.ITEM_CODE}', class='btn btn-danger') 刪除
+
+                      button.btn.btn-info(type='submit') 修改
+
+            .modal.fade(id='activitycreate' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    button.close(type='button', data-dismiss='modal') ×
+                    h4.modal-title 新增
+                  form(method='post', action='/admin/activities_create')
+                    .modal-body
+                        div.clearfix
+                        div
+                          span 新增TYPE:
+                          div
+                            textarea(rows='2', cols='30' name='IMACT_TYPE')
+                          span 新增URL:
+                          div
+                            textarea(rows='4', cols='50' name='ITEM_URL')
+                    .modal-footer
+                      button.btn.btn-success(type='submit') 新增
+
+    //
+      End #Activities
+      ==========================
